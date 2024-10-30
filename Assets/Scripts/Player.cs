@@ -63,9 +63,9 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
     // Update is called once per frame
     void Update()
     {
+        if(!IsOwner) return;
         HandleMovement();
         HandleInteraction();
-        
     }
 
     public bool IsWalking()
