@@ -11,15 +11,31 @@ public class SelectedCounterVisual : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Player.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        if (Player.LocalInstance != null)
+        {
+            Player.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        }else
+        {
+            Player.OnAnyPlayerSpawned += Player_OnAnyPlayerSpawned;
+        }
+    }
+
+    private void Player_OnAnyPlayerSpawned(object sender, System.EventArgs e)
+    {
+        if (Player.LocalInstance != null)
+        {
+            Player.LocalInstance.OnSelectedCounterChanged -= Player_OnSelectedCounterChanged;
+            Player.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        }
     }
 
     private void Player_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
     {
-        if(e.selectedCounter == baseCounter)
+        if (e.selectedCounter == baseCounter)
         {
             Show();
-        }else
+        }
+        else
         {
             Hide();
         }
@@ -31,7 +47,7 @@ public class SelectedCounterVisual : MonoBehaviour
         {
             visualGameObject.SetActive(true);
         }
-        
+
     }
 
     private void Hide()
