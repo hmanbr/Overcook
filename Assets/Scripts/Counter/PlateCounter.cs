@@ -17,6 +17,8 @@ public class PlateCounter : BaseCounter
 
     private void Update()
     {
+        if(!IsServer) return;
+
         spawnPlatetimer += Time.deltaTime;
         if(spawnPlatetimer >  spawnPlateTimerMax)
         {
