@@ -24,14 +24,14 @@ public class ClearCounter : BaseCounter
                 {
                     if (plateKitchenObject.TryAddIngredient(GetKitchenOject().GetKitchenObjectSO()))
                     {
-                        GetKitchenOject().DestroySelf();
+                        KitchenObject.DestroyKitchenObject(GetKitchenOject());
                     }
                 }else
                 {
                     if (GetKitchenOject().TryGetPlate(out plateKitchenObject))
                     {
                         if(plateKitchenObject.TryAddIngredient(player.GetKitchenOject().GetKitchenObjectSO())) {
-                            player.GetKitchenOject().DestroySelf();
+                            KitchenObject.DestroyKitchenObject(player.GetKitchenOject());
                         }
                     }
                 }
