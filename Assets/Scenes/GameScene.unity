@@ -1699,11 +1699,11 @@ RectTransform:
   - {fileID: 846292721}
   - {fileID: 253247836}
   - {fileID: 1700559542}
-  - {fileID: 1652595355}
   - {fileID: 799392808}
   - {fileID: 941471668}
-  - {fileID: 965076538}
   - {fileID: 1796079035}
+  - {fileID: 1652595355}
+  - {fileID: 965076538}
   - {fileID: 1924325119}
   - {fileID: 1371000503}
   m_Father: {fileID: 0}

@@ -26,6 +26,8 @@ public class HostDisconnectUI : MonoBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
+        Debug.Log("OnClientDisconnectCallback");
+
         if (clientId == NetworkManager.ServerClientId)
         {
             //Server is shutting down
