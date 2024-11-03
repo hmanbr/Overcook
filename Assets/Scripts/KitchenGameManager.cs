@@ -214,12 +214,16 @@ public class KitchenGameManager : NetworkBehaviour
     private void PauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
         playerPauseDictionary[serverRpcParams.Receive.SenderClientId] = true;
+
+        TestGamePausedState();
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void UnpauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
         playerPauseDictionary[serverRpcParams.Receive.SenderClientId] = false;
+
+        TestGamePausedState();
     }
 
     private void TestGamePausedState()
