@@ -91,11 +91,11 @@ public class KitchenObject : NetworkBehaviour {
 
     public static void SpawnKitchenObject(KitchenObjectSO kitchenObjectSO, IKitchenObjectParent kitchenObjectParent)
     {
-        KitchenGameMultiplayer.instance.SpawnKitchenObject(kitchenObjectSO, kitchenObjectParent);
+        KitchenGameMultiplayer.Instance.SpawnKitchenObject(kitchenObjectSO, kitchenObjectParent);
     } 
 
     public static void DestroyKitchenObject(KitchenObject kitchenObject)
     {
-        KitchenGameMultiplayer.instance.DestroyKitchenObject(kitchenObject);
+        KitchenGameMultiplayer.Instance.DestroyKitchenObject(kitchenObject);
     }
 }
